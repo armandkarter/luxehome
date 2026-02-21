@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Empêcher l'indexation des dossiers système ou privés
+Disallow: /vendor/
+Disallow: /storage/
+Disallow: /admin/
+Disallow: /login
+
+# Indiquer le chemin vers le sitemap (important pour les 14 langues)
+Sitemap: https://fluxedd.com/nl/sitemap.xml
