@@ -49,8 +49,8 @@
                         <span>{!! __('messages.footer_address') !!}</span>
                     </li>
                     <li class="flex items-center">
-                        <i class="fa-solid fa-phone mr-3 text-indigo-500"></i>
-                        <span>{{ __('messages.footer_phone') }}</span>
+                        <!-- <i class="fa-solid fa-phone mr-3 text-indigo-500"></i> -->
+                        <!-- <span>{{ __('messages.footer_phone') }}</span> -->
                     </li>
                 </ul>
             </div>

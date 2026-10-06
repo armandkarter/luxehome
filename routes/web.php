@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Authcontroller;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\InquiryController;
@@ -79,7 +79,7 @@ Route::post('/property/{id}/inquiry', [InquiryController::class, 'store'])->name
 Route::post('/contact', [InquiryController::class, 'contact'])->name('contact.submit');
 //login routes
 Route::get('/login', function () {return view('auth.login');})->name('login');
-Route::post('/login/store',[Authcontroller::class,'login'])->name('login.store');
+Route::post('/login/store',[AuthController::class,'login'])->name('login.store');
 
 //admin routes
 Route::middleware(['auth'])->prefix('admin')->group(function () {

@@ -15,10 +15,31 @@
     </div>
 @endif
 
+@if (session('success'))
+    <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-6 rounded-r-2xl">
+        <div class="flex items-center">
+            <i class="fa-solid fa-check-circle text-green-500 mr-3"></i>
+            <p class="text-sm text-green-700 font-bold">
+                {{ session('success') }}
+            </p>
+        </div>
+    </div>
+@endif
+@if (session('error'))
+    <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-r-2xl">
+        <div class="flex items-center">
+            <i class="fa-solid fa-circle-exclamation text-red-500 mr-3"></i>
+            <p class="text-sm text-red-700 font-bold">
+                {{ session('error') }}
+            </p>
+        </div>
+    </div>
+@endif
+
 <div class="max-w-5xl mx-auto space-y-8 pb-20" x-data="propertyUpload()">
     {{-- Header --}}
     <div class="flex items-center gap-4">
-        <a href="{{ route('admin.dashboard') }}" class="p-3 bg-white rounded-2xl border border-slate-100 text-slate-400 hover:text-indigo-600 transition shadow-sm">
+        <a href="{{ route('admin.dashboard', ['locale' => app()->getLocale()]) }}" class="p-3 bg-white rounded-2xl border border-slate-100 text-slate-400 hover:text-indigo-600 transition shadow-sm">
             <i class="fa-solid fa-arrow-left"></i>
         </a>
         <div>
@@ -27,7 +48,7 @@
         </div>
     </div>
 
-    <form action="{{ route('admin.properties.updateDetails', $property->id) }}" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <form action="{{ route('admin.properties.updateDetails', ['locale' => app()->getLocale(), 'id' => $property->id]) }}" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         @csrf
         @method('PUT')
 
@@ -62,8 +83,6 @@
                             <option value="{{ $country->id }}">{{ $country->name }}</option>
                             @endforeach
                         </select>
-                        <input type="text" name="country_image" id="country-image" placeholder="URL de l'image du pays" required
-                                class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 outline-none focus:border-indigo-500 transition">
                         <input type="text" name="address" placeholder="Adresse complète" required
                                 class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 outline-none focus:border-indigo-500 transition">
                     </div>

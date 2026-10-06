@@ -34,7 +34,15 @@
             <p class="text-slate-400 font-bold text-sm uppercase tracking-tighter">{{ __('messages.show_price_label') }}</p>
             <p class="text-4xl font-black text-indigo-600">
                 {{ number_format($property->price, 0, '.', ' ') }} <span class="text-lg">€</span>
-                <span class="text-slate-400 text-sm font-medium">/ {{ $property->price_label }}</span>
+                <span class="text-slate-400 text-sm font-medium">/
+                     @if($property->price_label == 'par nuit')
+                        {{ __('messages.label_nuit') }}
+                     @elseif($property->price_label == 'par mois')
+                        {{ __('messages.label_mois') }}
+                        @else
+                            {{ __('messages.price_label_net') }}
+                        @endif                    
+                    </span>
             </p>
         </div>
     </div>

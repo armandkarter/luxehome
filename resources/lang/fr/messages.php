@@ -13,7 +13,7 @@ return [
     'footer_link_privacy' => 'Politique de confidentialité',
     'footer_link_admin' => 'Espace Admin',
     'footer_title_contact' => 'Contact',
-    'footer_address' => "Boulevard de l'Indépendance,<br>Cotonou, Bénin",
+    'footer_address' => "105 Boulevard de Sébastopol, 75002 Paris, France",
     'footer_phone' => '+229 00 00 00 00',
     'footer_rights' => 'Tous droits réservés.',
     'footer_slogan' => "Design de prestige pour clients d'exception.",
@@ -94,9 +94,18 @@ return [
     'dest_card_explore' => 'Explorer',
 
     // Optionnel : Traduction des pays si tes noms en BDD sont fixes
-    'dest_name_france' => 'France',
-    'dest_name_italie' => 'Italie',
-    'dest_name_espagne' => 'Espagne',
+  'dest_name_france'   => 'France',
+    'dest_name_spain'    => 'Espagne',
+    'dest_name_italy'    => 'Italie',
+    'dest_name_greece'   => 'Grèce',
+    'dest_name_portugal' => 'Portugal',
+    'dest_name_croatia'  => 'Croatie',
+    'dest_name_turkey'   => 'Turquie',
+    'dest_name_netherlands' => 'Pays-Bas',
+    'dest_name_england'  => 'Angleterre',
+    'dest_name_estonia'  => 'Estonie',
+    'dest_name_germany'  => 'Allemagne',
+    'dest_name_china'    => 'Chine',
 
     // Property Card
     'property_offer_vente' => 'À Vendre',
@@ -177,8 +186,7 @@ return [
 'search_option_unlimited' => 'Illimité',
 'search_no_results_title' => 'Aucune propriété trouvée',
 'search_no_results_desc' => 'Désolé, aucun bien ne correspond à vos critères de recherche actuels.',
-'label_nuit' => 'nuit',
-'label_mois' => 'mois',
+
 'budget_prestige' => 'Prestige',
 
     //service index

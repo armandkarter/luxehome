@@ -88,7 +88,7 @@
                                             </p>
                                             <p class="text-[9px] uppercase font-black text-slate-400 mt-2 tracking-widest">
                                                 @if($property->price_label === 'total') 
-                                                    {{ __('messages.cat_show_price_sale') }} 
+                                                    {{ __('messages.cprice_saleat_show_') }} 
                                                 @else 
                                                     {{ __('messages.cat_show_price_per') }} {{ $property->price_label }} 
                                                 @endif

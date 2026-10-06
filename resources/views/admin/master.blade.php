@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - @yield('title')</title>
+    <link rel="icon" href="{{ asset('assets/images/logo.jpeg') }}">
 
     <script src="https://cdn.tailwindcss.com"></script>
     {{-- Ajout de Alpine.js pour l'interactivité du menu mobile --}}
@@ -44,7 +45,7 @@
         </div>
 
         <nav class="flex-1 px-4 space-y-2">
-            <a href="{{ route('admin.dashboard') }}" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 transition-all {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+            <a href="{{ route('admin.dashboard', ['locale' => app()->getLocale()]) }}" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 transition-all {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                 <i class="fa-solid fa-chart-pie w-5"></i>
                 <span class="font-semibold">Dashboard</span>
             </a>
@@ -63,7 +64,7 @@
         </nav>
 
         <div class="p-4 border-t border-slate-100">
-            <form action="{{ route('logout') }}" method="POST">
+            <form action="{{ route('logout', ['locale' => app()->getLocale()]) }}" method="POST">
                 @csrf
                 <button class="flex items-center gap-3 px-4 py-3 w-full text-red-500 font-bold hover:bg-red-50 rounded-xl transition-all">
                     <i class="fa-solid fa-arrow-right-from-bracket"></i>

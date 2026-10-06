@@ -13,7 +13,7 @@ return [
     'footer_link_privacy' => 'Privacy Policy',
     'footer_link_admin' => 'Admin Area',
     'footer_title_contact' => 'Contact',
-    'footer_address' => "Independence Boulevard,<br>Cotonou, Benin",
+    'footer_address' => "105 Boulevard de Sébastopol, 75002 Paris, France",
     'footer_phone' => '+229 00 00 00 00',
     'footer_rights' => 'All rights reserved.',
     'footer_slogan' => "Prestige design for exceptional clients.",
@@ -90,9 +90,18 @@ return [
     'dest_card_explore' => 'Explore',
 
     // Countries
-    'dest_name_france' => 'France',
-    'dest_name_italie' => 'Italy',
-    'dest_name_espagne' => 'Spain',
+   'dest_name_france'      => 'France',
+'dest_name_spain'       => 'Spain',
+'dest_name_italy'       => 'Italy',
+'dest_name_greece'      => 'Greece',
+'dest_name_portugal'    => 'Portugal',
+'dest_name_croatia'     => 'Croatia',
+'dest_name_turkey'      => 'Turkey',
+'dest_name_netherlands' => 'Netherlands',
+'dest_name_england'     => 'England',
+'dest_name_estonia'     => 'Estonia',
+'dest_name_germany'     => 'Germany',
+'dest_name_china'       => 'China',
 
     // Property Card
     'property_offer_vente' => 'For Sale',

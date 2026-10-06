@@ -21,7 +21,9 @@ public function login($locale, Request $request)
 
     if (Auth::attempt($credentials)) {
         $request->session()->regenerate();
-        return redirect()->intended('admin/dashboard');
+        return redirect()->intended(
+        route('admin.dashboard', ['locale' => ])
+    );
     }
 
     return back()->withErrors(['email' => 'Identifiants incorrects.']);

@@ -44,9 +44,15 @@
                 <div>
                     <p class="text-xl font-black text-slate-900">
                         {{ number_format($property->price, 0, '.', ' ') }} <span class="text-xs">€</span>
-                        @if(Str::slug($property->offer_type) == 'rent' || Str::slug($property->offer_type) == 'booking')
-                            <span class="text-[10px] text-slate-400 font-medium lowercase">/ {{ __('messages.property_price_period') }}</span>
-                        @endif
+                            <span class="text-[10px] text-slate-400 font-medium lowercase">
+                                 @if($property->price_label == 'par nuit')
+                       {{__('messages.price_label_per')}} {{ __('messages.label_nuit') }}
+                     @elseif($property->price_label == 'par mois')
+                       {{__('messages.price_label_per')}} {{ __('messages.label_mois') }}
+                        @else
+                            {{ __('messages.price_label_net') }}
+                        @endif   
+                            </span>
                     </p>
                 </div>
                 <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">

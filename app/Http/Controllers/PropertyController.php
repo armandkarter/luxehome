@@ -104,7 +104,7 @@ public function search(Request $request)
 }
 
 
-   public function quickStore(Request $request)
+   public function quickStore($locale, Request $request)
 {
     $request->validate([
         'title' => 'required|max:255',
@@ -131,19 +131,20 @@ public function search(Request $request)
         'status'      => 'Disponible',
     ]);
 
-    return redirect()->route('admin.properties.complete', $property->id)
+    return redirect()->route('admin.properties.complete', ['locale' => app()->getLocale(), 'id' => $property->id])
                         ->with('success', 'Bien créé ! Complétons maintenant les détails.');
 }
 
-    public function complete($id)
+    public function complete($locale, $id)
     {
         $property = Property::findOrFail($id);
-        return view('admin.properties.complete', compact('property'));
+        $countries = Country::all();
+        return view('admin.properties.complete', compact('property', 'countries'));
     }
 
 
 
-public function updateDetails(Request $request, $id)
+public function updateDetails($locale, $id, Request $request)
 {
     $property = Property::findOrFail($id);
 
@@ -206,7 +207,7 @@ public function updateDetails(Request $request, $id)
                 }
             }
 
-            return redirect()->route('admin.dashboard')
+            return redirect()->route('admin.dashboard', ['locale' => app()->getLocale()])
                 ->with('success', 'L\'annonce a été mise à jour avec succès !');
         });
 
@@ -301,7 +302,7 @@ public function categorie($locale, $slug)
 
 
 //services
-public function services()
+public function services($locale)
     {
         $routeName = request()->route()->getName();
 

@@ -159,7 +159,7 @@
                     <p class="text-slate-500 text-sm">Commençons par les informations essentielles.</p>
                 </div>
 
-                <form action="{{ route('admin.properties.quickStore') }}" method="POST" class="space-y-5" 
+                <form action="{{ route('admin.properties.quickStore', ['locale' => app()->getLocale()]) }}" method="POST" class="space-y-5" 
       x-data="{ offer: 'Vente' }"> {{-- On initialise une variable locale au formulaire --}}
     @csrf
     
